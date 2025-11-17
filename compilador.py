@@ -339,9 +339,8 @@ class StaticChecker:
         """ Escreve o arquivo .LEX com base no exemplo[cite: 85]. """
         
         header = [
-            "Código da Equipe: 99 (PREENCHER)",
             "Componentes:",
-            "Guilherme Rodrigues; seu.email@aluno.senai.br; (71)9XXXX-XXXX (PREENCHER)",
+            "Guilherme Rodrigues; guilherme.rodrigues@aln.senaicimatec.com.br; (71)985389396",
             f"RELATÓRIO DA ANÁLISE LÉXICA. Texto fonte analisado: {self.source_filename}" 
         ]
         
@@ -362,9 +361,8 @@ class StaticChecker:
         """ Escreve o arquivo .TAB com base no exemplo. """
         
         header = [
-            "Código da Equipe: 99 (PREENCHER)",
             "Componentes:",
-            "Guilherme Rodrigues; seu.email@aluno.senai.br; (71)9XXXX-XXXX (PREENCHER)",
+            "Guilherme Rodrigues; guilherme.rodrigues@aln.senaicimatec.com.br; (71)985389396",
             f"RELATÓRIO DA TABELA DE SÍMBOLOS. Texto fonte analisado: {self.source_filename}" 
         ]
         
