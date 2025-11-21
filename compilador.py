@@ -2,8 +2,6 @@ import sys
 import os
 import re
 
-
-
 # dicionário de palavras reservadas 
 RESERVED_WORDS = {
     'INTEGER': 'PRS01', 'REAL': 'PRS02', 'CHARACTER': 'PRS03', 'STRING': 'PRS04',
