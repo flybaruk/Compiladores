@@ -28,7 +28,7 @@ RESERVED_SYMBOLS = {
 SORTED_SYMBOLS = sorted(RESERVED_SYMBOLS.keys(), key=len, reverse=True)
 
 
-TRUNC_LIMIT = 32
+TRUNC_LIMIT = 35
 
 
 LETRA = r'[a-zA-Z]'
