@@ -74,7 +74,7 @@ class StaticChecker:
         self.pos = 0  
 
     def run(self):
-        """ Executa o processo principal de análise. """
+        # Executa o processo principal de análise. 
         print(f"Iniciando análise do arquivo: {self.source_filename}")
         
         if not self.read_source_file():
@@ -91,7 +91,7 @@ class StaticChecker:
         print(f" -> {self.tab_filename}")
 
     def read_source_file(self):
-        """ Lê o arquivo fonte .252. """
+        # Lê o arquivo fonte .252.
         try:
             
             with open(self.source_filename, 'r', encoding='utf-8') as f:
@@ -106,7 +106,7 @@ class StaticChecker:
             return False
 
     def run_lexer(self):
-        """ Itera sobre o código fonte e gera a lista de tokens. """
+        # Itera sobre o código fonte e gera a lista de tokens. 
         while self.pos < len(self.source_code):
             char = self.source_code[self.pos]
 
@@ -154,10 +154,10 @@ class StaticChecker:
             
             self.pos += 1
 
-    # --- MÉTODOS DE TRATAMENTO DE ÁTOMOS ---
+    #     MÉTODOS DE TRATAMENTO DE ÁTOMOS
     #função para comentarios em blocos
     def handle_block_comment(self):
-        """ Processa e ignora um comentário de bloco (/* ... */). """
+        # Processa e ignora um comentário de bloco (/* ... */). 
         
         self.pos += 2
         while self.pos + 1 < len(self.source_code):
@@ -172,7 +172,7 @@ class StaticChecker:
 
     #função para comentarios de linha
     def handle_line_comment(self):
-        """ Processa e ignora um comentário de linha (// ...). """
+    # Processa e ignora um comentário de linha (// ...)
         
         self.pos += 2
         while self.pos < len(self.source_code):
@@ -182,9 +182,9 @@ class StaticChecker:
             self.pos += 1
     
         self.pos = len(self.source_code)
-        
+        #identificador se é um simbolo reservado
     def handle_symbol(self):
-        """ Identifica o próximo símbolo reservado. """
+        # Identifica o próximo símbolo reservado. 
         
         for symbol in SORTED_SYMBOLS:
             if self.source_code.startswith(symbol, self.pos):
@@ -193,9 +193,9 @@ class StaticChecker:
                 self.pos += len(symbol)
                 return True
         return False
-
+        #identica quando encontra uuma variavel nova ou uma palavra reservada
     def handle_identifier_or_keyword(self):
-        """ Identifica um identificador ou palavra reservada. """
+        # identifica um identificador ou palavra reservada. 
         substring = self.source_code[self.pos:]
         match = IDENTIFIER_PATTERN.match(substring)
         
@@ -217,9 +217,9 @@ class StaticChecker:
             
             tab_index = self.add_to_symbol_table(truncated_lexeme, code, full_lexeme)
             self.add_token(truncated_lexeme, code, self.line_number, tab_index)
-
+        #identifica qundo encontra um numero
     def handle_number(self):
-        """ Identifica um intConst (IDN04) ou realConst (IDN05). """
+        # Identifica um intConst (IDN04) ou realConst (IDN05). 
         substring = self.source_code[self.pos:]
         
 
@@ -247,9 +247,9 @@ class StaticChecker:
             
         if substring[0].isdigit():
              self.pos += 1 
-
+        #identifica se é uma strng dentro de aspas
     def handle_string(self):
-        """ Identifica uma stringConst (IDN06). """
+        # Identifica uma stringConst (IDN06).
         substring = self.source_code[self.pos:]
         match = STRING_CONST_PATTERN.match(substring)
         
@@ -268,9 +268,9 @@ class StaticChecker:
         else:
            
             self.pos += 1
-                
+     #Pessoalmente não sei muito a diferença desse para o outro de cima, mas tinha que ter então só tirei o truncamento           
     def handle_char(self):
-        """ Identifica uma charConst (IDN07). """
+        # Identifica uma charConst (IDN07).
         substring = self.source_code[self.pos:]
         match = CHAR_CONST_PATTERN.match(substring)
         
@@ -286,10 +286,10 @@ class StaticChecker:
             
             self.pos += 1
 
-    # --- MÉTODOS DE RELATÓRIO E TABELA DE SÍMBOLOS ---
+    # MÉTODOS DE RELATÓRIO E TABELA DE SÍMBOLOS
 
     def add_token(self, lexeme, code, line, tab_index=None):
-        """ Adiciona um token à lista de tokens encontrados. """
+        # Adiciona um token à lista de tokens encontrados.
         self.tokens.append({
             'lexeme': lexeme,
             'code': code,
@@ -298,11 +298,7 @@ class StaticChecker:
         })
 
     def add_to_symbol_table(self, truncated_lexeme, code, full_lexeme):
-        """ 
-        Adiciona um identificador à tabela de símbolos.
-        Se já existe, apenas atualiza a linha.
-        Retorna o índice 1-based da entrada.
-        """
+        
        
         if truncated_lexeme in self.symbol_map:
             idx_0 = self.symbol_map[truncated_lexeme] 
@@ -334,7 +330,6 @@ class StaticChecker:
         return new_index_0 + 1
 
     def write_lex_report(self):
-        """ Escreve o arquivo .LEX com base no exemplo[cite: 85]. """
         
         header = [
             "Componentes:",
@@ -356,7 +351,6 @@ class StaticChecker:
                 f.write(f"Linha: {token['line']}.\n\n")
 
     def write_tab_report(self):
-        """ Escreve o arquivo .TAB com base no exemplo. """
         
         header = [
             "Componentes:",
