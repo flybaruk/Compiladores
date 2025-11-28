@@ -119,7 +119,7 @@ class StaticChecker:
                 self.pos += 1
                 continue
 
-            #delemitadores sendo tratados
+            #delimitadores sendo tratados
             if char == '/' and self.pos + 1 < len(self.source_code):
                 next_char = self.source_code[self.pos + 1]
                 if next_char == '*':
