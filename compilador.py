@@ -133,7 +133,7 @@ class StaticChecker:
             if self.handle_symbol():
                 continue
                 
-            #trata identificadore e palavras reservadas, coisas que começam com letra ou _
+            #trata identificadores e palavras reservadas, coisas que começam com letra ou _
             if char.isalpha() or char == '_':
                 self.handle_identifier_or_keyword()
                 continue
@@ -193,7 +193,7 @@ class StaticChecker:
                 self.pos += len(symbol)
                 return True
         return False
-        #identica quando encontra uuma variavel nova ou uma palavra reservada
+        #identica quando encontra uma variavel nova ou uma palavra reservada
     def handle_identifier_or_keyword(self):
         # identifica um identificador ou palavra reservada. 
         substring = self.source_code[self.pos:]
