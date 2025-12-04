@@ -333,7 +333,10 @@ class StaticChecker:
         
         header = [
             "Componentes:",
+            "Arthur Ribeiro; arthur.cerqueira@aln.senaicimatec.edu.br; (71)996279569",
+            "Barnado Resende; bernado.resende@aln.senaicimatec.edu.br; (71)999634013",
             "Guilherme Rodrigues; guilherme.rodrigues@aln.senaicimatec.com.br; (71)985389396",
+            "José Henrique;jose.a@aln.senaicimatec.edu.br; (71)992849523",
             f"RELATÓRIO DA ANÁLISE LÉXICA. Texto fonte analisado: {self.source_filename}" 
         ]
         
@@ -354,7 +357,10 @@ class StaticChecker:
         
         header = [
             "Componentes:",
+            "Arthur Ribeiro; arthur.cerqueira@aln.senaicimatec.edu.br; (71)996279569",
+            "Barnado Resende; bernado.resende@aln.senaicimatec.edu.br; (71)999634013",
             "Guilherme Rodrigues; guilherme.rodrigues@aln.senaicimatec.com.br; (71)985389396",
+            "José Henrique;jose.a@aln.senaicimatec.edu.br; (71)992849523",
             f"RELATÓRIO DA TABELA DE SÍMBOLOS. Texto fonte analisado: {self.source_filename}" 
         ]
         
