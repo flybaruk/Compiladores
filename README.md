@@ -1,6 +1,6 @@
 # Projeto de Compiladores - Analisador Léxico
 
-Este repositório contém a implementação da primeira etapa de um compilador (Analisador Léxico / Static Checker) para a linguagem especificada na disciplina de **Compiladores**, ministrada pelo **Professor Osvaldo Requião Melo**.
+Este repositório contém a implementação da setima etapa do projeto para a linguagem especificada na disciplina de **Compiladores**, ministrada pelo **Professor Osvaldo Requião Melo**.
 
 O projeto foi desenvolvido em **Python 3.10** e realiza a leitura de arquivos fonte com extensão `.252`, gerando relatórios de tokens e tabela de símbolos.
 
