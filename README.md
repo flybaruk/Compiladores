@@ -14,7 +14,7 @@ O analisador realiza as seguintes tarefas:
     * Arquivo `.LEX`: Relatório contendo a sequência de tokens identificados.
     * Arquivo `.TAB`: Relatório do estado final da Tabela de Símbolos.
 
-## 🛠️ Pré-requisitos
+## Pré-requisitos
 
 * Python 3.10 ou superior instalado.
 * Não é necessário instalar bibliotecas externas (o projeto utiliza apenas bibliotecas padrão: `sys`, `os`, `re`).
